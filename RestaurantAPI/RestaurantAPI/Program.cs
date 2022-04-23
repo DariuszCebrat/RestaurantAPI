@@ -1,5 +1,7 @@
 //using Nlog.Web;
 using RestaurantAPI;
+using RestaurantAPI.Entities;
+using RestaurantAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder.Logging.ClearProviders();
@@ -14,7 +16,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 
+
 var app = builder.Build();
+
+
+    
 
 // Configure the HTTP request pipeline.
 

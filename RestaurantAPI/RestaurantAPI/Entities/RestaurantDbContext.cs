@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RestaurantAPI.Services;
 
 namespace RestaurantAPI.Entities
 {
@@ -16,6 +17,8 @@ namespace RestaurantAPI.Entities
             modelBuilder.Entity<Restaurant>().Property(r => r.Name).IsRequired().HasMaxLength(25);
 
             modelBuilder.Entity<Dish>().Property(r => r.Name).IsRequired();
+            new DbInitializer(modelBuilder).Seed();
+          
 
         }
 
