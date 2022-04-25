@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using RestaurantAPI.Entities;
+using RestaurantAPI.Exceptions;
 using RestaurantAPI.Models;
 
 namespace RestaurantAPI.Services
@@ -18,15 +19,15 @@ namespace RestaurantAPI.Services
             _logger = logger;
         }
 
-        public async Task<bool> Update(int id,UpdateRestaurantDto dto)
+        public async Task Update(int id,UpdateRestaurantDto dto)
         {
             var restaurantToEdit = _db.Restaurants.FirstOrDefault(x=>x.Id == id);
-            if (restaurantToEdit == null) return false;
+            if (restaurantToEdit == null) throw new NotFoundException("restaurant not found");
             restaurantToEdit.Name = dto.Name;   
             restaurantToEdit.Description = dto.Description; 
             restaurantToEdit.HasDelivery = dto.HasDelivery; 
             await _db.SaveChangesAsync();
-            return true;
+       
 
         }
 
@@ -36,7 +37,7 @@ namespace RestaurantAPI.Services
                .Include(x => x.Address)
                .Include(x => x.Dishes)
                .FirstOrDefault(x => x.Id == id);
-            if (restaurant == null) return null;
+            if (restaurant == null) throw new NotFoundException("restaurant not found");
             var result = _mapper.Map<RestaurantDto>(restaurant);
             return result;
         }
@@ -58,14 +59,14 @@ namespace RestaurantAPI.Services
             await _db.SaveChangesAsync();
             return restaurant.Id;
         }
-        public async Task<bool> Delete(int id)
+        public async Task Delete(int id)
         {
             _logger.LogError($"Restaurant with id:{id} DELETE action invoke");
             var restaurant = _db.Restaurants.FirstOrDefault(x => x.Id == id);
-            if (restaurant is  null) return false;
+            if (restaurant is  null) throw new NotFoundException("restaurant not found");
             _db.Restaurants.Remove(restaurant);
            await _db.SaveChangesAsync();
-            return true;
+      
         }
     }
 }
