@@ -1,4 +1,5 @@
-//using Nlog.Web;
+
+using NLog.Web;
 using RestaurantAPI;
 using RestaurantAPI.Entities;
 using RestaurantAPI.Services;
@@ -6,7 +7,7 @@ using RestaurantAPI.Services;
 var builder = WebApplication.CreateBuilder(args);
 //builder.Logging.ClearProviders();
 //builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
-//builder.Host.UseNLog();
+builder.Host.UseNLog();
 
 //przed services i configuration  add builder
 

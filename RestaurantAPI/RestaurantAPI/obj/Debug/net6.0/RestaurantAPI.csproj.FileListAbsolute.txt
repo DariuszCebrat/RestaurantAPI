@@ -56,3 +56,7 @@ C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\Restaurant
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\obj\Debug\net6.0\RestaurantAPI.csproj.CopyComplete
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\nlog.config
+C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\NLog.dll
+C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\NLog.Web.AspNetCore.dll

@@ -9,13 +9,13 @@ namespace RestaurantAPI.Services
     {
         private readonly RestaurantDbContext _db;
         private readonly IMapper _mapper;
-      
+        private readonly ILogger<RestaurantService> _logger;
 
-        public RestaurantService(RestaurantDbContext db, IMapper mapper)
+        public RestaurantService(RestaurantDbContext db, IMapper mapper,ILogger<RestaurantService> logger)
         {
             _db = db;
             _mapper = mapper;
-     
+            _logger = logger;
         }
 
         public async Task<bool> Update(int id,UpdateRestaurantDto dto)
@@ -60,6 +60,7 @@ namespace RestaurantAPI.Services
         }
         public async Task<bool> Delete(int id)
         {
+            _logger.LogWarning($"Restaurant with id:{id} DELETE action invoke");
             var restaurant = _db.Restaurants.FirstOrDefault(x => x.Id == id);
             if (restaurant is  null) return false;
             _db.Restaurants.Remove(restaurant);
