@@ -20,6 +20,8 @@ namespace RestaurantAPI
 
             CreateMap<Dish, DishDto>();
 
+            CreateMap<CreateDishDto, Dish>();
+
         }
     }
 }
