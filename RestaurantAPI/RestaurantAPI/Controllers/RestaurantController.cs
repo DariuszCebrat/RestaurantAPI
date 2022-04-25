@@ -19,6 +19,15 @@ namespace RestaurantAPI.Controllers
             _db = db;
             _mapper = mapper;
         }
+        [HttpPost]
+        public async Task<ActionResult> CreateRestaurant([FromBody]CreateRestaurantDto dto)
+        {
+            var restaurant = _mapper.Map<Restaurant>(dto);
+           await _db.Restaurants.AddAsync(restaurant);
+            await _db.SaveChangesAsync();
+
+            return Created($"/api/restaurant/{restaurant.Id}",null);
+        }
         [HttpGet]
         public ActionResult<IEnumerable<RestaurantDto>> GetAll()
         {
@@ -44,6 +53,8 @@ namespace RestaurantAPI.Controllers
             var restaurantDto = _mapper.Map<RestaurantDto>(restaurant);
             return Ok(restaurantDto);
         }
+
+
 
     }
 }
