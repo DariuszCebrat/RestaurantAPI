@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-
+builder.Services.AddDbContext<RestaurantDbContext>();
 
 var app = builder.Build();
 
