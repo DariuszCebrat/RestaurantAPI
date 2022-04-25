@@ -45,5 +45,13 @@ namespace RestaurantAPI.Services
             await _db.SaveChangesAsync();
             return restaurant.Id;
         }
+        public async Task<bool> Delete(int id)
+        {
+            var restaurant = _db.Restaurants.FirstOrDefault(x => x.Id == id);
+            if (restaurant is  null) return false;
+            _db.Restaurants.Remove(restaurant);
+           await _db.SaveChangesAsync();
+            return true;
+        }
     }
 }
