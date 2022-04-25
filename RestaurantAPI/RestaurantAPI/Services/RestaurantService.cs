@@ -17,6 +17,19 @@ namespace RestaurantAPI.Services
             _mapper = mapper;
      
         }
+
+        public async Task<bool> Update(int id,UpdateRestaurantDto dto)
+        {
+            var restaurantToEdit = _db.Restaurants.FirstOrDefault(x=>x.Id == id);
+            if (restaurantToEdit == null) return false;
+            restaurantToEdit.Name = dto.Name;   
+            restaurantToEdit.Description = dto.Description; 
+            restaurantToEdit.HasDelivery = dto.HasDelivery; 
+            await _db.SaveChangesAsync();
+            return true;
+
+        }
+
         public RestaurantDto GetById(int id)
         {
             var restaurant = _db.Restaurants
