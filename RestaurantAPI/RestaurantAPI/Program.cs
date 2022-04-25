@@ -20,6 +20,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<RestaurantDbContext>();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IRestaurantService, RestaurantService>();
+builder.Services.AddScoped<IDishService, DishService>();
 //logger
 builder.Services.AddScoped<ErrorHandlingMiddleware>();
 builder.Services.AddScoped<RequestTimeMiddleware>();
