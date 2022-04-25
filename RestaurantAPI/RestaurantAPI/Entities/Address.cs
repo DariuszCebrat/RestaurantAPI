@@ -1,4 +1,6 @@
-﻿namespace RestaurantAPI.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RestaurantAPI.Entities
 {
     public class Address
     {
