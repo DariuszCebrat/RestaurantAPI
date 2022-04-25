@@ -17,7 +17,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<RestaurantDbContext>();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
-
+builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 var app = builder.Build();
 
 
