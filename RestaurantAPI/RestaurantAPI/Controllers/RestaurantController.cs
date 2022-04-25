@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RestaurantAPI.Entities;
+using RestaurantAPI.Models;
+
 
 namespace RestaurantAPI.Controllers
 {
@@ -9,26 +13,36 @@ namespace RestaurantAPI.Controllers
     public class RestaurantController : ControllerBase
     {
         private RestaurantDbContext _db;
-        public RestaurantController(RestaurantDbContext db)
+        private readonly IMapper _mapper;
+        public RestaurantController(RestaurantDbContext db,IMapper mapper)
         {
             _db = db;
+            _mapper = mapper;
         }
         [HttpGet]
-        public ActionResult<IEnumerable<Restaurant>> GetAll()
+        public ActionResult<IEnumerable<RestaurantDto>> GetAll()
         {
-            var restaurants = _db.Restaurants.ToList();
-            return Ok(restaurants);
+            var restaurants = _db.Restaurants
+                .Include(x=>x.Address)
+                .Include(x=>x.Dishes)
+                .ToList();
+            var restaurantsDtos = _mapper.Map<List<RestaurantDto>>(restaurants);
+            return Ok(restaurantsDtos);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Restaurant> Get([FromRoute]int id)
+        public ActionResult<RestaurantDto> Get([FromRoute]int id)
         {
-            var restaurant = _db.Restaurants.FirstOrDefault(x=>x.Id == id);
+            var restaurant = _db.Restaurants
+                .Include(x => x.Address)
+                .Include(x => x.Dishes)
+                .FirstOrDefault(x=>x.Id == id);
             if (restaurant is null)
             {
                 return NotFound();
             }
-            return Ok(restaurant);
+            var restaurantDto = _mapper.Map<RestaurantDto>(restaurant);
+            return Ok(restaurantDto);
         }
 
     }
