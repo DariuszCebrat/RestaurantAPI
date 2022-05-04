@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "mhcYNQTZCvJy0nDp9aPim1MmvZ/MuHCto1Mq2cm17NCbOKdzqhowTQs95KXdcO1GtylaBRFP/8/gkteimvKc+A==",
+  "dgSpecHash": "wcSNLUWvE7oVnBnGi3VAUL7Ro/wULRm0YbiGeW3CJ1GX7VayddvaqAesE0jGbqRRLYw4SwTok8VWCWhVTlMYyw==",
   "success": true,
   "projectFilePath": "C:\\Users\\48502\\source\\repos\\restaurantAPI\\RestaurantAPI\\RestaurantAPI\\RestaurantAPI\\RestaurantAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48502\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\48502\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\48502\\.nuget\\packages\\fluentvalidation\\11.0.0\\fluentvalidation.11.0.0.nupkg.sha512",
+    "C:\\Users\\48502\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.0.0\\fluentvalidation.aspnetcore.11.0.0.nupkg.sha512",
+    "C:\\Users\\48502\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.0.0\\fluentvalidation.dependencyinjectionextensions.11.0.0.nupkg.sha512",
     "C:\\Users\\48502\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\48502\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\48502\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

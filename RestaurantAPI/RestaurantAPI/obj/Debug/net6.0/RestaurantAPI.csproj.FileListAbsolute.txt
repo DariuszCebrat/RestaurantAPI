@@ -65,3 +65,6 @@ C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\Restaurant
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\obj\Debug\net6.0\RestaurantAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
