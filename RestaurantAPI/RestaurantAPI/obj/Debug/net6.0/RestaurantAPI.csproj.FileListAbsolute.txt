@@ -68,3 +68,4 @@ C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\Restaurant
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\48502\source\repos\restaurantAPI\RestaurantAPI\RestaurantAPI\RestaurantAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
