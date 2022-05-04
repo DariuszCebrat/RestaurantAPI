@@ -11,9 +11,24 @@ namespace RestaurantAPI.Services
         {
             this.modelBuilder = modelBuilder;
         }
+        private IEnumerable<Role> GetRoles ()
+        {
+            var roles = new List<Role>()
+            {
+                new Role(){ Id = 3, Name = "User"},
+                new Role(){Id = 1,Name ="Manager"},
+                new Role(){Id = 2,Name ="Admin"}
+            };
+            return roles;
+        }
 
         public void Seed()
         {
+           
+            modelBuilder.Entity<Role>().HasData(
+                GetRoles()
+
+                ) ;
             modelBuilder.Entity<Address>().HasData(
                 new Address()
                 {

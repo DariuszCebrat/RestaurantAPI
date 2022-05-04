@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestaurantAPI.Entities;
 
@@ -11,9 +12,10 @@ using RestaurantAPI.Entities;
 namespace RestaurantAPI.Migrations
 {
     [DbContext(typeof(RestaurantDbContext))]
-    partial class RestaurantDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220504075411_UserAndRoleAdd")]
+    partial class UserAndRoleAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -226,23 +228,6 @@ namespace RestaurantAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 3,
-                            Name = "User"
-                        },
-                        new
-                        {
-                            Id = 1,
-                            Name = "Manager"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Admin"
-                        });
                 });
 
             modelBuilder.Entity("RestaurantAPI.Entities.User", b =>

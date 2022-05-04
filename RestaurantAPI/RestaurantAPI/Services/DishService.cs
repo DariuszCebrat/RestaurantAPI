@@ -68,7 +68,8 @@ namespace RestaurantAPI.Services
         public async Task RemoveById(int restaurantId,int dishId)
         {
             var restaurant = GetRestaurantById(restaurantId);
-           var dishToDelete = restaurant.Dishes.FirstOrDefault(x => x.Id == dishId);
+            if (restaurant is null) throw new NotFoundException("restaurant not found");
+            var dishToDelete = restaurant.Dishes.FirstOrDefault(x => x.Id == dishId);
             if (dishToDelete is null) throw new NotFoundException("Dish not found");
             _db.Dishes.Remove(dishToDelete);
             await _db.SaveChangesAsync();
