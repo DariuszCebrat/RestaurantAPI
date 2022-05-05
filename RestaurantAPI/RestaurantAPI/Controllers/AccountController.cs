@@ -5,7 +5,7 @@ using RestaurantAPI.Services;
 
 namespace RestaurantAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/account")]
     [ApiController]//automatyczna walidacja
     public class AccountController : ControllerBase
     {
